@@ -1,6 +1,6 @@
 (function()
 {
- var Global=this,Runtime=this.IntelliFactory.Runtime,WebSharper,Html,Operators,Default,List,HTML5,_,SiteCommon,Billing,Concurrency,jQuery,Remoting,T,String,Seq,Nav,EventsPervasives,ClaimInput,window,Claims,ClaimController,ContactUs,Policies,ConfirmationState,Unchecked,Website,MIScript;
+ var Global=this,Runtime=this.IntelliFactory.Runtime,WebSharper,Html,Operators,Default,List,HTML5,_,SiteCommon,Billing,Concurrency,jQuery,Remoting,T,String,Seq,Nav,EventsPervasives,ClaimInput,window,Claims,ClaimController,ContactUs,Policies,ConfirmationState,Unchecked,Website,MIScript,alert,document;
  Runtime.Define(Global,{
   "":{
    Billing:{
@@ -726,26 +726,26 @@
     Nav:{
      Pop:Runtime.Field(function()
      {
-      var returnVal;
+      var _returnVal_22_3;
       return{
        $:1,
-       $0:(returnVal=[{}],(null,returnVal[0].transition="pop",returnVal[0]))
+       $0:(_returnVal_22_3=[{}],(null,_returnVal_22_3[0].transition="pop",_returnVal_22_3[0]))
       };
      }),
      SlideLeft:Runtime.Field(function()
      {
-      var returnVal;
+      var _returnVal_21_4;
       return{
        $:1,
-       $0:(returnVal=[{}],(null,returnVal[0].transition="slide",returnVal[0].reverse=true,returnVal[0]))
+       $0:(_returnVal_21_4=[{}],(null,_returnVal_21_4[0].transition="slide",_returnVal_21_4[0].reverse=true,_returnVal_21_4[0]))
       };
      }),
      SlideRight:Runtime.Field(function()
      {
-      var returnVal;
+      var _returnVal_20_5;
       return{
        $:1,
-       $0:(returnVal=[{}],(null,returnVal[0].transition="slide",returnVal[0]))
+       $0:(_returnVal_20_5=[{}],(null,_returnVal_20_5[0].transition="slide",_returnVal_20_5[0]))
       };
      }),
      back:function()
@@ -1077,48 +1077,67 @@
     {
      var rootPage,claimsPage,notificationPage,dialogPage,claimDetail,newClaim,billingPage,contactusPage,pages,x,f,f1;
      jQuery.mobile.pushStateEnabled=false;
-     rootPage=Policies.PoliciesPage();
-     claimsPage=Claims.ClaimsPage();
-     notificationPage=SiteCommon.notificationPage();
-     dialogPage=SiteCommon.dialogPage();
-     claimDetail=Claims.ClaimsDetailPage();
-     newClaim=ClaimInput.ClaimIputPage();
-     billingPage=Billing.BillingPage();
-     contactusPage=ContactUs.ContactUsPage();
-     pages=List.ofArray([rootPage,dialogPage,notificationPage,claimsPage,claimDetail,newClaim,contactusPage,billingPage]);
-     x=Default.Div(pages);
-     f=(f1=function()
-     {
-      var f2,action,x3,f5,objectArg;
-      f2=(action=function(elt)
+     if(!MIScript.SupportsHTML5())
       {
-       var x1,x2,f3,f4;
-       x1=(x2=jQuery(elt.Body),(f3=function(arg00)
+       alert("This site requires a HTML5 capable browser. Your current browser does not seem to support HTML5");
+       return Default.Div(List.ofArray([Default.Text("Use an HTML5 capable browser")]));
+      }
+     else
+      {
+       rootPage=Policies.PoliciesPage();
+       claimsPage=Claims.ClaimsPage();
+       notificationPage=SiteCommon.notificationPage();
+       dialogPage=SiteCommon.dialogPage();
+       claimDetail=Claims.ClaimsDetailPage();
+       newClaim=ClaimInput.ClaimIputPage();
+       billingPage=Billing.BillingPage();
+       contactusPage=ContactUs.ContactUsPage();
+       pages=List.ofArray([rootPage,dialogPage,notificationPage,claimsPage,claimDetail,newClaim,contactusPage,billingPage]);
+       x=Default.Div(pages);
+       f=(f1=function()
        {
-        return arg00.page();
-       },f3(x2)));
-       f4=function(value)
+        var f2,action,x3,f5,objectArg;
+        f2=(action=function(elt)
+        {
+         var x1,x2,f3,f4;
+         x1=(x2=jQuery(elt.Body),(f3=function(arg00)
+         {
+          return arg00.page();
+         },f3(x2)));
+         f4=function(value)
+         {
+          value;
+         };
+         return f4(x1);
+        },function(list)
+        {
+         return Seq.iter(action,list);
+        });
+        f2(pages);
+        x3=jQuery(rootPage.Body);
+        f5=(objectArg=jQuery.mobile,function(arg00)
+        {
+         return objectArg.changePage(arg00);
+        });
+        return f5(x3);
+       },function(w)
        {
-        value;
-       };
-       return f4(x1);
-      },function(list)
-      {
-       return Seq.iter(action,list);
-      });
-      f2(pages);
-      x3=jQuery(rootPage.Body);
-      f5=(objectArg=jQuery.mobile,function(arg00)
-      {
-       return objectArg.changePage(arg00);
-      });
-      return f5(x3);
-     },function(w)
+        return Operators.OnAfterRender(f1,w);
+       });
+       f(x);
+       return x;
+      }
+    },
+    SupportsHTML5:function()
+    {
+     var elem,ctxProperty,ctx;
+     elem=document.createElement("canvas");
+     ctxProperty=function(target)
      {
-      return Operators.OnAfterRender(f1,w);
-     });
-     f(x);
-     return x;
+      return target.getContext;
+     };
+     ctx=ctxProperty(elem);
+     return!Unchecked.Equals(ctx,null);
     }
    },
    MobileInsuranceViewer:Runtime.Class({
@@ -1157,7 +1176,9 @@
   ConfirmationState=Runtime.Safe(SiteCommon.ConfirmationState);
   Unchecked=Runtime.Safe(WebSharper.Unchecked);
   Website=Runtime.Safe(Global.Website);
-  return MIScript=Runtime.Safe(Website.MIScript);
+  MIScript=Runtime.Safe(Website.MIScript);
+  alert=Runtime.Safe(Global.alert);
+  return document=Runtime.Safe(Global.document);
  });
  Runtime.OnLoad(function()
  {
