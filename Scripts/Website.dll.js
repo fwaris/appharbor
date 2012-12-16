@@ -858,6 +858,12 @@
      jQ=jQuery(e.get_Body());
      return jQ.on("pagebeforeshow",f);
     },
+    OnCreate:function(f,e)
+    {
+     var jQ;
+     jQ=jQuery(e.get_Body());
+     return jQ.on("pagecreate",f);
+    },
     OnShow:function(f,e)
     {
      var jQ;
@@ -906,8 +912,8 @@
     },
     footer:function(page)
     {
-     var _this,arg00,_this1,arg001,x,a,_this2,arg002,_this3,arg003,_this4,arg004,b,f,x1,x3,a1,_this5,arg005,_this6,arg006,_this7,arg007,b1,f2,x4,x5,a2,_this8,arg008,_this9,arg009,_thisa,arg00a,b2,f3,x6,x7,a3,_thisb,arg00b,_thisc,arg00c,_thisd,arg00d,b3,f4,x8;
-     return Operators.add(Default.Div(List.ofArray([Default.Id("footer"+String(page)),(_this=HTML5.Attr(),(arg00="data-"+"role",_this.NewAttr(arg00,"footer"))),(_this1=HTML5.Attr(),(arg001="data-"+"position",_this1.NewAttr(arg001,"fixed"))),Default.Attr().Class("ui-bar")])),List.ofArray([(x=Operators.add(Default.A((a=List.ofArray([Default.HRef("#"),(_this2=HTML5.Attr(),(arg002="data-"+"role",_this2.NewAttr(arg002,"button"))),(_this3=HTML5.Attr(),(arg003="data-"+"icon",_this3.NewAttr(arg003,"home"))),(_this4=HTML5.Attr(),(arg004="data-"+"iconpos",_this4.NewAttr(arg004,"top")))]),(b=Seq.toList(Seq.delay(function()
+     var x,_this,arg00,_this1,arg001,x1,a,_this2,arg002,_this3,arg003,_this4,arg004,b,f,x2,x4,a1,_this5,arg005,_this6,arg006,_this7,arg007,b1,f2,x5,x6,a2,_this8,arg008,_this9,arg009,_thisa,arg00a,b2,f3,x7,x8,a3,_thisb,arg00b,_thisc,arg00c,_thisd,arg00d,b3,f4,x9,f5,f6;
+     x=Operators.add(Default.Div(List.ofArray([Default.Id("footer"+String(page)),(_this=HTML5.Attr(),(arg00="data-"+"role",_this.NewAttr(arg00,"footer"))),(_this1=HTML5.Attr(),(arg001="data-"+"position",_this1.NewAttr(arg001,"fixed"))),Default.Attr().Class("ui-bar")])),List.ofArray([(x1=Operators.add(Default.A((a=List.ofArray([Default.HRef("#"),(_this2=HTML5.Attr(),(arg002="data-"+"role",_this2.NewAttr(arg002,"button"))),(_this3=HTML5.Attr(),(arg003="data-"+"icon",_this3.NewAttr(arg003,"home"))),(_this4=HTML5.Attr(),(arg004="data-"+"iconpos",_this4.NewAttr(arg004,"top")))]),(b=Seq.toList(Seq.delay(function()
      {
       if(Unchecked.Equals(page,{
        $:0
@@ -919,22 +925,22 @@
        {
         return Seq.empty();
        }
-     })),List.append(a,b)))),List.ofArray([Default.Text("Policies")])),(f=(x1=function()
+     })),List.append(a,b)))),List.ofArray([Default.Text("Policies")])),(f=(x2=function()
      {
       return function()
       {
-       var x2,f1;
-       x2=jQuery("#policies");
+       var x3,f1;
+       x3=jQuery("#policies");
        f1=function(p)
        {
         return Nav.transition(p);
        };
-       return f1(x2);
+       return f1(x3);
       };
      },function(arg10)
      {
-      return EventsPervasives.Events().OnClick(x1,arg10);
-     }),(f(x),x))),(x3=Operators.add(Default.A((a1=List.ofArray([Default.HRef("#"),(_this5=HTML5.Attr(),(arg005="data-"+"role",_this5.NewAttr(arg005,"button"))),(_this6=HTML5.Attr(),(arg006="data-"+"icon",_this6.NewAttr(arg006,"star"))),(_this7=HTML5.Attr(),(arg007="data-"+"iconpos",_this7.NewAttr(arg007,"top")))]),(b1=Seq.toList(Seq.delay(function()
+      return EventsPervasives.Events().OnClick(x2,arg10);
+     }),(f(x1),x1))),(x4=Operators.add(Default.A((a1=List.ofArray([Default.HRef("#"),(_this5=HTML5.Attr(),(arg005="data-"+"role",_this5.NewAttr(arg005,"button"))),(_this6=HTML5.Attr(),(arg006="data-"+"icon",_this6.NewAttr(arg006,"star"))),(_this7=HTML5.Attr(),(arg007="data-"+"iconpos",_this7.NewAttr(arg007,"top")))]),(b1=Seq.toList(Seq.delay(function()
      {
       if(Unchecked.Equals(page,{
        $:1
@@ -946,22 +952,22 @@
        {
         return Seq.empty();
        }
-     })),List.append(a1,b1)))),List.ofArray([Default.Text("Claims")])),(f2=(x4=function()
+     })),List.append(a1,b1)))),List.ofArray([Default.Text("Claims")])),(f2=(x5=function()
      {
       return function()
       {
-       var x2,f1;
-       x2=jQuery("#claims");
+       var x3,f1;
+       x3=jQuery("#claims");
        f1=function(p)
        {
         return Nav.transition(p);
        };
-       return f1(x2);
+       return f1(x3);
       };
      },function(arg10)
      {
-      return EventsPervasives.Events().OnClick(x4,arg10);
-     }),(f2(x3),x3))),(x5=Operators.add(Default.A((a2=List.ofArray([Default.HRef("#"),(_this8=HTML5.Attr(),(arg008="data-"+"role",_this8.NewAttr(arg008,"button"))),(_this9=HTML5.Attr(),(arg009="data-"+"icon",_this9.NewAttr(arg009,"grid"))),(_thisa=HTML5.Attr(),(arg00a="data-"+"iconpos",_thisa.NewAttr(arg00a,"top")))]),(b2=Seq.toList(Seq.delay(function()
+      return EventsPervasives.Events().OnClick(x5,arg10);
+     }),(f2(x4),x4))),(x6=Operators.add(Default.A((a2=List.ofArray([Default.HRef("#"),(_this8=HTML5.Attr(),(arg008="data-"+"role",_this8.NewAttr(arg008,"button"))),(_this9=HTML5.Attr(),(arg009="data-"+"icon",_this9.NewAttr(arg009,"grid"))),(_thisa=HTML5.Attr(),(arg00a="data-"+"iconpos",_thisa.NewAttr(arg00a,"top")))]),(b2=Seq.toList(Seq.delay(function()
      {
       if(Unchecked.Equals(page,{
        $:2
@@ -973,22 +979,22 @@
        {
         return Seq.empty();
        }
-     })),List.append(a2,b2)))),List.ofArray([Default.Text("Billing")])),(f3=(x6=function()
+     })),List.append(a2,b2)))),List.ofArray([Default.Text("Billing")])),(f3=(x7=function()
      {
       return function()
       {
-       var x2,f1;
-       x2=jQuery("#billing");
+       var x3,f1;
+       x3=jQuery("#billing");
        f1=function(p)
        {
         return Nav.transition(p);
        };
-       return f1(x2);
+       return f1(x3);
       };
      },function(arg10)
      {
-      return EventsPervasives.Events().OnClick(x6,arg10);
-     }),(f3(x5),x5))),(x7=Operators.add(Default.A((a3=List.ofArray([Default.HRef("#"),(_thisb=HTML5.Attr(),(arg00b="data-"+"role",_thisb.NewAttr(arg00b,"button"))),(_thisc=HTML5.Attr(),(arg00c="data-"+"icon",_thisc.NewAttr(arg00c,"info"))),(_thisd=HTML5.Attr(),(arg00d="data-"+"iconpos",_thisd.NewAttr(arg00d,"top")))]),(b3=Seq.toList(Seq.delay(function()
+      return EventsPervasives.Events().OnClick(x7,arg10);
+     }),(f3(x6),x6))),(x8=Operators.add(Default.A((a3=List.ofArray([Default.HRef("#"),(_thisb=HTML5.Attr(),(arg00b="data-"+"role",_thisb.NewAttr(arg00b,"button"))),(_thisc=HTML5.Attr(),(arg00c="data-"+"icon",_thisc.NewAttr(arg00c,"info"))),(_thisd=HTML5.Attr(),(arg00d="data-"+"iconpos",_thisd.NewAttr(arg00d,"top")))]),(b3=Seq.toList(Seq.delay(function()
      {
       if(Unchecked.Equals(page,{
        $:3
@@ -1000,22 +1006,32 @@
        {
         return Seq.empty();
        }
-     })),List.append(a3,b3)))),List.ofArray([Default.Text("Contact Us")])),(f4=(x8=function()
+     })),List.append(a3,b3)))),List.ofArray([Default.Text("Contact Us")])),(f4=(x9=function()
      {
       return function()
       {
-       var x2,f1;
-       x2=jQuery("#contactus");
+       var x3,f1;
+       x3=jQuery("#contactus");
        f1=function(p)
        {
         return Nav.transition(p);
        };
-       return f1(x2);
+       return f1(x3);
       };
      },function(arg10)
      {
-      return EventsPervasives.Events().OnClick(x8,arg10);
-     }),(f4(x7),x7)))]));
+      return EventsPervasives.Events().OnClick(x9,arg10);
+     }),(f4(x8),x8)))]));
+     f5=(f6=function(d)
+     {
+      var returnVal;
+      return jQuery(d.Body).fixedtoolbar((returnVal=[{}],(null,returnVal[0].tapToggle=false,returnVal[0])));
+     },function(w)
+     {
+      return Operators.OnAfterRender(f6,w);
+     });
+     f5(x);
+     return x;
     },
     homeButton:function()
     {
