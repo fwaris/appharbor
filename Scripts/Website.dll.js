@@ -726,26 +726,26 @@
     Nav:{
      Pop:Runtime.Field(function()
      {
-      var _returnVal_22_3;
+      var returnVal;
       return{
        $:1,
-       $0:(_returnVal_22_3=[{}],(null,_returnVal_22_3[0].transition="pop",_returnVal_22_3[0]))
+       $0:(returnVal=[{}],(null,returnVal[0].transition="pop",returnVal[0]))
       };
      }),
      SlideLeft:Runtime.Field(function()
      {
-      var _returnVal_21_4;
+      var returnVal;
       return{
        $:1,
-       $0:(_returnVal_21_4=[{}],(null,_returnVal_21_4[0].transition="slide",_returnVal_21_4[0].reverse=true,_returnVal_21_4[0]))
+       $0:(returnVal=[{}],(null,returnVal[0].transition="slide",returnVal[0].reverse=true,returnVal[0]))
       };
      }),
      SlideRight:Runtime.Field(function()
      {
-      var _returnVal_20_5;
+      var returnVal;
       return{
        $:1,
-       $0:(_returnVal_20_5=[{}],(null,_returnVal_20_5[0].transition="slide",_returnVal_20_5[0]))
+       $0:(returnVal=[{}],(null,returnVal[0].transition="slide",returnVal[0]))
       };
      }),
      back:function()
