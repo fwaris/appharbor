@@ -337,7 +337,7 @@
       x=Remoting.Async("Website:7",[]);
       f1=function(_arg1)
       {
-       var children,a,x1,_this,b,a1,b1,x5,f2;
+       var children,a,x1,_this,b,a1,b1,x5,f2,x6,f3;
        children=Operators.add(Default.Div(Runtime.New(T,{
         $:0
        })),(a=List.ofArray([(x1=List.ofArray([Default.Text("Policy")]),(_this=Default.Tags(),_this.NewTag("legend",x1)))]),(b=(a1=Seq.toList(Seq.delay(function()
@@ -354,12 +354,18 @@
        })),(b1=List.ofArray([Default.P(Runtime.New(T,{
         $:0
        }))]),List.append(a1,b1))),List.append(a,b))));
-       x5=jQuery("#policychoice").html(children.get_Html()).trigger("create");
+       x5=jQuery("#policychoice").html(children.get_Html());
        f2=function(value)
        {
         value;
        };
        f2(x5);
+       x6=jQuery("#newClaim").children(":jqmData(role=content)").trigger("create");
+       f3=function(value)
+       {
+        value;
+       };
+       f3(x6);
        return Concurrency.Return(null);
       };
       return Concurrency.Bind(x,f1);
